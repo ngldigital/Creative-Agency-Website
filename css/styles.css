@@ -1,0 +1,398 @@
+body {
+  background-color: #191921;
+}
+/* ================================= IMPORT ================================= */
+@font-face {
+  font-family: "Commissioner", sans-serif;
+  src: url("/");
+  font-weight: medium;
+  font-style: normal;
+}
+
+/* ========================================================================== */
+/*                                  VARIABLES                                 */
+/* ========================================================================== */
+:root {
+  --header-height: 3rem;
+  /* ================================= COLOURS ================================ */
+  --primary: #f94f4f;
+  --secondary: #ff9393;
+  --tertiary: #191921;
+
+  --black: #000000;
+  --white: #ffffff;
+
+  /* ================================== FONTS ================================= */
+  /* FONT-FAMILY */
+  --font-family: "Commissioner", sans-serif;
+
+  /* FONT-WEIGHT */
+  --font-regular: 400;
+  --font-bold: 800;
+
+  /* FONT-SIZE */
+  --h1-fontsize: 5rem;
+  --h2-fontsize: 2.5rem;
+  --h3-fontsize: 1.8rem;
+  --paragraph-fontsize: 1rem;
+  --label-fontsize: 1rem;
+  --button-fontsize: 0.875rem;
+
+  /* ========================================================================== */
+  /*                              MARGIN / PADDING                              */
+  /* ========================================================================== */
+  --mb-1: 1rem;
+  --mb-2: 2rem;
+  --mb-3: 3rem;
+  --mb-4: 4rem;
+  --mb-5: 5rem;
+  --mb-6: 6.9rem;
+  --mb-7: 7rem;
+  --mb-8: 8rem;
+  --mb-9: 9rem;
+}
+
+/* ========================================================================== */
+/*                                   GLOBAL                                   */
+/* ========================================================================== */
+/* =============================== TYPOGRAPHY =============================== */
+.h1-black,
+.h2-black,
+.h3-black {
+  font-family: var(--font-family);
+  font-weight: var(--font-bold);
+  color: var(--black);
+  line-height: 1;
+  margin-bottom: var(--mb-2);
+}
+
+.h1-black {
+  font-size: var(--h1-fontsize);
+}
+
+.h2-black {
+  font-size: var(--h2-fontsize);
+}
+
+.h3-black {
+  font-size: var(--h3-fontsize);
+}
+
+.paragraph-black {
+  font-family: var(--font-family);
+  font-weight: var(--font-regular);
+  font-size: var(--paragraph-fontsize);
+  color: var(--black);
+  margin-bottom: var(--mb-2);
+  line-height: 1.6;
+}
+
+.h1-white,
+.h2-white,
+.h3-white,
+.h1-white-subtitle {
+  font-family: var(--font-family);
+  font-weight: var(--font-bold);
+  color: var(--white);
+  line-height: 1.2;
+  margin-bottom: var(--mb-2);
+}
+
+.h1-white {
+  font-size: var(--h1-fontsize);
+}
+
+.h2-white {
+  font-size: var(--h2-fontsize);
+}
+
+.h3-white {
+  font-size: var(--h3-fontsize);
+}
+
+.label-white-left,
+.label-white-right {
+  font-family: var(--font-family);
+  font-weight: var(--font-bold);
+  font-size: var(--label-fontsize);
+  color: var(--white);
+}
+
+.label-white-left {
+  margin-bottom: var(--mb-1);
+}
+
+.paragraph-white {
+  font-family: var(--font-family);
+  font-weight: var(--font-regular);
+  font-size: var(--paragraph-fontsize);
+  color: var(--white);
+  margin-bottom: var(--mb-2);
+  line-height: 1.6;
+}
+
+.h1-white-subtitle {
+  font-size: var(--h1-fontsize);
+  opacity: 0.25;
+}
+
+/* ================================= LAYOUT ================================= */
+.container {
+  margin: 0 auto;
+  max-width: 64rem; /* 1024px */
+  width: calc(100% - 3rem);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 1.5rem;
+}
+
+/* ================================= BUTTONS ================================ */
+.btn {
+  white-space: nowrap;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+.btn:hover,
+.btn:focus {
+  box-shadow: 12px 12px 36px 12px rgba(0, 0, 0, 0.16);
+  transition: background 300ms ease, color 300ms ease;
+}
+
+.btn-primary {
+  background: var(--primary);
+  font-family: var(--font-family);
+  font-weight: var(--font-bold);
+  font-size: var(--paragraph-fontsize);
+  color: var(--white);
+  letter-spacing: 0;
+  padding: 1.5rem 3.5rem;
+  margin-bottom: var(--mb-6);
+}
+
+.btn-underline {
+  font-family: var(--font-family);
+  font-weight: var(--font-bold);
+  color: var(--primary);
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--primary);
+}
+
+/* ================================= UTILITY ================================ */
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.break::after {
+  content: "\a";
+  white-space: pre;
+}
+
+.red-colour {
+  color: var(--primary);
+}
+
+/* ========================================================================== */
+/*                                    PAGES                                   */
+/* ========================================================================== */
+/* ============================== LANDING PAGE ============================== */
+/* ================================= HEADER ================================= */
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: var(--white);
+}
+
+.nav {
+  padding: 2.5rem 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.nav-list {
+}
+
+.nav-item {
+  margin-bottom: var(--mb-3);
+}
+
+.nav-link {
+  font-family: var(--font-family);
+  color: var(--primary);
+  transition: 0.4s;
+}
+
+.nav-link:hover {
+  color: var(--secondary);
+  font-weight: var(--font-bold);
+}
+
+.nav-toggle {
+  cursor: pointer;
+}
+
+/* LATER Questionable from tutorial*/
+/* @media (min-width: 768px) {
+  .nav-menu {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    padding-top: 1.5rem;
+    text-align: center;
+    transition: 0.4s;
+    background-color: var(--white);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+} */
+
+/* LATER Show Menu */
+.show-menu {
+  top: 3rem;
+}
+
+/* ================================== MAIN ================================== */
+.main {
+  background: var(--white);
+  margin-top: var(--mb-6);
+}
+
+.home-img {
+  margin-bottom: 3rem;
+}
+
+/* ================================ SECTION 1 =============================== */
+.section1 {
+  background: var(--tertiary);
+  position: relative;
+}
+
+.sec1-line {
+  max-width: 63px;
+  position: absolute;
+  top: -3%;
+}
+
+.sec1-content {
+  position: relative;
+  padding: 4.5rem 0;
+}
+
+/* ================================ SECTION 2 =============================== */
+.section2 {
+  background: var(--primary);
+}
+
+.sec2-col1 {
+  padding: 6rem 0 1rem 0;
+}
+
+.sec2-content {
+  position: relative;
+  margin-bottom: var(--mb-6);
+}
+
+.sec2-subcontent {
+  margin-left: 1rem;
+  position: absolute;
+  top: 60;
+}
+
+.sec2-col2:last-child {
+  margin-bottom: var(--mb-5);
+}
+
+/* ================================ SECTION 3 =============================== */
+.section3 {
+  background: var(--tertiary);
+}
+
+.sec3-col1 {
+  width: 100%;
+  max-height: 40rem;
+  position: relative;
+}
+
+.sec3-subcontent {
+  text-align: right;
+  position: absolute;
+  top: 80%;
+  right: 8%;
+}
+
+.sec3-col2 {
+  padding: 4.5rem 0 1rem 0;
+}
+
+.slider-imgs {
+  opacity: 0.75;
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+}
+
+/* ================================ SECTION 4 =============================== */
+.section4 {
+  background: var(--white);
+  padding: 6rem 0;
+}
+
+.button-group {
+  margin-bottom: var(--mb-3);
+}
+
+/* BETTER SELECTOR */
+.left-chevron {
+  margin-right: 1rem;
+}
+
+/* ================================= FOOTER ================================= */
+
+/* ========================================================================== */
+/*                                MEDIA QUERIES                               */
+/* ========================================================================== */
+/* ============================== SMALL DEVICES ============================= */
+/* ============================= MEDIUM DEVICES ============================= */
+/* ============================== LARGE DEVICES ============================= */
+
+/* All viewports above 768px will have a container width of 80% */
+@media (min-width: 768px) {
+  /* .container {
+    margin: 0 auto;
+    max-width: 64rem;
+    width: calc(100% - 4rem);
+  }
+
+  .grid {
+    display: grid;
+    gap: 1.5rem;
+  }
+  .home-data {
+    grid-column: 1/6;
+    grid-row: 1;
+  }
+
+  .home-img {
+    grid-column: 6/-1;
+  } */
+}
+
+/* All viewports above 1200px will have a container width of 80% */
+@media (min-width: 992px) {
+  .container {
+    background-color: pink;
+  }
+}
