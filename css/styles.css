@@ -142,13 +142,6 @@ body {
   max-width: 64rem; /* 1024px */
   width: calc(100% - 3rem);
 }
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  gap: 1.5rem;
-}
-
 /* ================================= BUTTONS ================================ */
 .btn {
   white-space: nowrap;
@@ -171,7 +164,17 @@ body {
   color: var(--white);
   letter-spacing: 0;
   padding: 1.5rem 3.5rem;
-  margin-bottom: var(--mb-6);
+  margin-bottom: var(--mb-1);
+}
+
+.btn-nav {
+  background: var(--tertiary);
+  font-family: var(--font-family);
+  font-weight: var(--font-bold);
+  font-size: var(--paragraph-fontsize);
+  color: var(--white);
+  letter-spacing: 0;
+  padding: 1rem 1rem;
 }
 
 .btn-underline {
@@ -183,11 +186,6 @@ body {
 }
 
 /* ================================= UTILITY ================================ */
-.flex-col {
-  display: flex;
-  flex-direction: column;
-}
-
 .flex-row {
   display: flex;
   flex-direction: row;
@@ -209,25 +207,59 @@ body {
 /* ================================= HEADER ================================= */
 .header {
   width: 100%;
+  min-height: 6.875rem;
+  background: var(--white);
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1;
-  background-color: var(--white);
 }
 
 .nav {
-  padding: 2.5rem 0;
   display: flex;
-  flex-direction: row;
+  align-items: center;
   justify-content: space-between;
 }
 
-.nav-list {
+.nav-list,
+.nav-menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
-.nav-item {
-  margin-bottom: var(--mb-3);
+.nav-menu {
+  position: relative;
+  background: var(--primary);
+  min-height: 6.875rem;
+}
+
+.nav-menu::after {
+  content: "";
+  min-height: 6.875rem;
+  position: absolute;
+  left: 30%;
+  width: 60rem;
+  background: var(--primary);
+  z-index: -1;
+}
+
+.nav-link {
+  font-family: var(--font-family);
+  color: var(--white);
+  margin: 0 1rem;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+/* 
+.nav-list,
+.nav-item,
+.nav-link,
+.btn-nav {
+  display: none;
 }
 
 .nav-link {
@@ -241,38 +273,27 @@ body {
   font-weight: var(--font-bold);
 }
 
-.nav-toggle {
-  cursor: pointer;
-}
-
-/* LATER Questionable from tutorial*/
-/* @media (min-width: 768px) {
-  .nav-menu {
-    position: fixed;
-    top: -100%;
-    left: 0;
-    z-index: 1;
-    width: 100%;
-    padding-top: 1.5rem;
-    text-align: center;
-    transition: 0.4s;
-    background-color: var(--white);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+@media (min-width: 768px) {
+  .nav-list,
+  .nav-item,
+  .nav-link,
+  .btn-nav {
+    display: block;
   }
-} */
 
-/* LATER Show Menu */
-.show-menu {
-  top: 3rem;
-}
+  .nav-toggle {
+    display: none;
+  }
+}*/
 
 /* ================================== MAIN ================================== */
 .main {
   background: var(--white);
   margin-top: var(--mb-6);
+  padding-bottom: var(--mb-6);
 }
 
-.home-img {
+.home-image {
   margin-bottom: 3rem;
 }
 
@@ -280,6 +301,8 @@ body {
 .section1 {
   background: var(--tertiary);
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .sec1-line {
@@ -296,6 +319,8 @@ body {
 /* ================================ SECTION 2 =============================== */
 .section2 {
   background: var(--primary);
+  display: flex;
+  flex-direction: column;
 }
 
 .sec2-col1 {
@@ -318,13 +343,8 @@ body {
 }
 
 /* ================================ SECTION 3 =============================== */
-.section3 {
-  background: var(--tertiary);
-}
-
 .sec3-col1 {
   width: 100%;
-  max-height: 40rem;
   position: relative;
 }
 
@@ -336,12 +356,14 @@ body {
 }
 
 .sec3-col2 {
-  padding: 4.5rem 0 1rem 0;
+  padding: 4.5rem 2rem 1rem 2rem;
+  position: relative;
 }
 
-.slider-imgs {
-  opacity: 0.75;
-  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+.sec3-line {
+  display: none;
+  max-width: 63px;
+  position: absolute;
 }
 
 /* ================================ SECTION 4 =============================== */
@@ -370,24 +392,127 @@ body {
 
 /* All viewports above 768px will have a container width of 80% */
 @media (min-width: 768px) {
-  /* .container {
-    margin: 0 auto;
-    max-width: 64rem;
+  /* ================================= LAYOUT ================================= */
+  .container {
     width: calc(100% - 4rem);
   }
 
-  .grid {
-    display: grid;
-    gap: 1.5rem;
-  }
-  .home-data {
-    grid-column: 1/6;
-    grid-row: 1;
+  /* ================================== MAIN ================================== */
+  .home-image {
+    margin-bottom: 3rem;
   }
 
-  .home-img {
-    grid-column: 6/-1;
-  } */
+  .main {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  .home-image {
+    grid-column: 7/-1;
+    grid-row: 1/2;
+  }
+
+  .home-data {
+    margin-top: var(--mb-4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-column: 1/8;
+    grid-row: 1/2;
+  }
+
+  /* ================================ SECTION 1 =============================== */
+  .section1 {
+    background: none;
+    flex-direction: row;
+    z-index: -1;
+  }
+
+  .sec1-image,
+  .sec1-content {
+    width: 50%;
+  }
+
+  .sec1-line {
+    top: 20%;
+    left: -8%;
+  }
+
+  .sec1-content {
+    padding: 7.5rem 3.8rem 15rem 3.8rem;
+  }
+
+  /* ================================ SECTION 2 =============================== */
+  .section2 {
+    background: none;
+    display: flex;
+    flex-direction: row;
+    margin: -20% auto;
+  }
+
+  .sec2-col1 {
+    background: var(--white);
+    padding: 7.5rem 2rem;
+    margin-top: 18%;
+    width: 45%;
+    height: 45rem;
+  }
+
+  .sec2-col2 {
+    background: var(--primary);
+    padding: 7.5rem 2rem;
+    width: 55%;
+  }
+
+  .sec2-col1 h3 {
+    color: var(--black);
+  }
+
+  /* ================================ SECTION 3 =============================== */
+  .section3 {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+  }
+
+  .sec3-col1 {
+    min-width: 26.25rem;
+    order: 2;
+  }
+  .sec3-col2 {
+    max-height: 30%;
+    padding: 7.5rem 2rem 0 2rem;
+    order: 1;
+    height: 300px;
+  }
+
+  .sec3-subcontent {
+    text-align: right;
+    position: absolute;
+    top: 75%;
+    right: 10%;
+  }
+
+  .sec3-line {
+    display: block;
+    top: 45%;
+    left: 90%;
+  }
+
+  .slider-imgs {
+    min-width: 420px;
+  }
+
+  /* ================================ SECTION 4 =============================== */
+  .footer {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .section4 {
+    background: var(--white);
+    padding: 4rem 0;
+  }
 }
 
 /* All viewports above 1200px will have a container width of 80% */
