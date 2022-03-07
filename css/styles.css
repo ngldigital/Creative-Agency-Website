@@ -246,14 +246,6 @@
   margin-top: 3rem;
 }
 
-/* .home-image-mobile {
-  width: 100%;
-}
-.home-image-desktop,
-.home-image-tablet {
-  display: none;
-} */
-
 /* ================================ SECTION 1 =============================== */
 .section1 {
   background: var(--tertiary);
@@ -279,15 +271,6 @@
   position: absolute;
   top: -5%;
 }
-
-/* .sec1-image-mobile {
-  width: 100%;
-}
-
-.sec1-image-desktop,
-.sec1-image-tablet {
-  display: none;
-} */
 
 /* ================================ SECTION 2 =============================== */
 .section2 {
@@ -371,7 +354,6 @@
   margin-bottom: var(--mb-3);
 }
 
-/* BETTER SELECTOR */
 .left-chevron {
   margin-right: 1rem;
 }
