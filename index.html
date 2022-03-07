@@ -23,9 +23,6 @@
     <link rel="stylesheet" href="/creativeagency-website/css/styles.css" />
   </head>
   <body>
-
-
-
     <!-- =============================== HEADER ================================ -->
     <header class="header grid-container">
       <nav class="nav">
@@ -35,47 +32,42 @@
             src="/creativeagency-website/img/desktop/logo.svg"
             alt="nav-logo"
         /></a>
-        <!-- NAV MENU -->
+        <!-- MENU -->
         <div class="nav-menu" id="nav-menu">
-            <ul class="nav-list">
-              <li class="nav-item">
-                <a href="#about" class="nav-link">About</a>
-              </li>
-              <li class="nav-item">
-                <a href="#service" class="nav-link">Service</a>
-              </li>
-              <li class="nav-item">
-                <a href="#projects" class="nav-link">Projects</a>
-              </li>
-            </ul>
-            <a class="btn-nav">Schedule a call</a>
-            <!-- NAV TOGGLE -->
-            <div class="nav-toggle" id="nav-toggle">
-              <img
-                src="/creativeagency-website/img/mobile/icon-hamburger.svg"
-                alt="creativeagency-websi"
-              />
-            </div>
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="#about" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+              <a href="#service" class="nav-link">Service</a>
+            </li>
+            <li class="nav-item">
+              <a href="#projects" class="nav-link">Projects</a>
+            </li>
+          </ul>
+          <a class="btn-nav">Schedule a call</a>
+          <!-- TOGGLE -->
+          <div class="nav-toggle" id="nav-toggle">
+            <img
+              src="/creativeagency-website/img/mobile/icon-hamburger.svg"
+              alt="creativeagency-websi"
+            />
+          </div>
+        </div>
       </nav>
-
     </header>
 
     <!-- ================================ MAIN ================================= -->
     <main class="main grid-container">
-      <div class="home-image">
-        <img class="home-image-desktop"
-          src="/creativeagency-website/img/desktop/image-hero.jpg"
-          alt="home-img"
+      <picture class="home-image">
+        <source
+          media="(min-width: 1110px)"
+          srcset="img/desktop/image-hero.jpg"
         />
-        <img class="home-image-tablet"
-          src="/creativeagency-website/img/tablet/image-hero.jpg"
-          alt="home-image-tablet"
-        />
-        <img class="home-image-mobile"
-          src="/creativeagency-website/img/mobile/image-hero.jpg"
-          alt="home-image-mobile"
-        />
-      </div>
+        <source media="(min-width: 768px)" srcset="img/tablet/image-hero.jpg" />
+        <source media="(min-width: 375px)" srcset="img/mobile/image-hero.jpg" />
+        <img src="img/mobile/image-hero.jpg" alt="home-image" />
+      </picture>
       <section class="home-data">
         <h2 class="h2-black">
           <span class="break">Branding &</span> website design agency
@@ -91,23 +83,21 @@
 
     <!-- ============================== SECTION 1 ============================== -->
     <section class="section1 grid-container">
-      <div class="sec1-image">
-        <img
-        class="sec1-image-desktop"
-        src="/creativeagency-website/img/desktop/image-strategic.jpg"
-        alt="sec1-image-desktop"
+      <picture class="sec1-image">
+        <source
+          media="(min-width: 1110px)"
+          srcset="img/desktop/image-strategic.jpg"
         />
-        <img
-        class="sec1-image-tablet"
-        src="/creativeagency-website/img/tablet/image-strategic.jpg"
-        alt="sec1-image-tablet"
+        <source
+          media="(min-width: 768px)"
+          srcset="img/tablet/image-strategic.jpg"
         />
-        <img
-        class="sec1-image-mobile"
-        src="/creativeagency-website/img/mobile/image-strategic.jpg"
-        alt="sec1-image-mobile"
+        <source
+          media="(min-width: 375px)"
+          srcset="img/mobile/image-strategic.jpg"
         />
-      </div>
+        <img src="img/mobile/image-strategic.jpg" alt="sec1-image" />
+      </picture>
 
       <div class="sec1-content">
         <img
@@ -170,21 +160,22 @@
     <!-- ============================== SECTION 3 ============================== -->
     <section class="section3 grid-container">
       <div class="sec3-col1">
-        <div class="slider-images">      
-          <img class="slider-image-desktop"
-          src="/creativeagency-website/img/desktop/image-slide-1.jpg"
-          alt="slider-image-desktop"
+        <picture class="slider-images">
+          <source
+            media="(min-width: 1110px)"
+            srcset="img/desktop/image-slide-1.jpg"
           />
-          <img class="slider-image-tablet"
-          src="/creativeagency-website/img/tablet/image-slide-1.jpg"
-          alt="slider-image-tablet"
+          <source
+            media="(min-width: 768px)"
+            srcset="img/tablet/image-slide-1.jpg"
           />
-          <img class="slider-image-mobile"
-          src="/creativeagency-website/img/mobile/image-slide-1.jpg"
-          alt="slider-image-mobile"
+          <source
+            media="(min-width: 375px)"
+            srcset="img/mobile/image-slide-1.jpg"
           />
-        </div>
-  
+          <img src="img/mobile/image-slide-1.jpg" alt="slider-image" />
+        </picture>
+
         <div class="sec3-subcontent">
           <p class="label-white-right">Lean Product Roadmap</p>
           <p class="paragraph-white">2019 Project</p>
@@ -197,7 +188,9 @@
           src="/creativeagency-website/img/desktop/bg-pattern-wavy-white.svg"
           alt="bg-pattern-wave-white"
         />
-        <h3 class="h3-white"><span class="break">Brand naming & </span>guidelines</h3>
+        <h3 class="h3-white">
+          <span class="break">Brand naming & </span>guidelines
+        </h3>
         <div class="button-group">
           <img
             class="left-chevron"
@@ -216,7 +209,9 @@
     <!-- ============================== SECTION 4 ============================== -->
     <section class="section4 grid-container">
       <div class="footer">
-        <h3 class="h3-black"><span class="break">Let's build something </span>great together.</h3>
+        <h3 class="h3-black">
+          <span class="break">Let's build something </span>great together.
+        </h3>
         <button class="btn btn-primary">Schedule a Call</button>
       </div>
     </section>
